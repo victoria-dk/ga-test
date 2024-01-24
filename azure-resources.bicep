@@ -1,7 +1,7 @@
 param location string = 'norwayeast'
-param storageName string = 'vspacextesting'
+param storageName string = 'mynewubuntudrive'
 
-param namePrefix string = 'vicnilosx'
+param namePrefix string = 'vicnil'
 
 param dockerImage string = 'ubuntu/nginx'
 param dockerImageTag string = 'latest'
