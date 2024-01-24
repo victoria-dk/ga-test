@@ -1,5 +1,5 @@
 param location string = 'norwayeast'
-param storageName string = 'bicepstorage'
+param storageName string = 'bicevnpstorage'
 
 resource storageaccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
   name: storageName
