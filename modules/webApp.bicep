@@ -21,11 +21,11 @@ resource webApplication 'Microsoft.Web/sites@2022-03-01' = {
         }
         {
           name: 'DOCKER_REGISTRY_SERVER_USERNAME'
-          value: ''
+          value: 'dockerRegistryUserName'
         }
         {
           name: 'DOCKER_REGISTRY_SERVER_PASSWORD'
-          value: ''
+          value: 'VeryStrongPassword'
         }
         {
           name: 'WEBSITES_ENABLE_APP_SERVICE_STORAGE'
