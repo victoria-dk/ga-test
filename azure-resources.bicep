@@ -1,14 +1,12 @@
-param location string = 'westus3'
-param storageName string = 'mynewubuntudrive4'
+param location string = 'norwayeast'
+param storageName string = 'vicniltestapp'
 
-param namePrefix string = 'paulon2'
-
-param dockerImage string = 'ubuntu/nginx' //'nginxdemos/hello'
-param dockerImageTag string = 'latest'
+param namePrefix string = 'vicnil'
 
 targetScope = 'resourceGroup'
 
-//how do consume modules
+//how to consume modules
+
 module storage 'modules/storage.bicep' = {
   name: storageName
   params: {
@@ -22,7 +20,6 @@ module appPlanDeploy 'modules/servicePlan.bicep' = {
   params: {
     namePrefix: namePrefix
     location: location
-
   }
 }
 
@@ -31,10 +28,7 @@ module deployWebsite 'modules/webApp.bicep' = {
   params: {
     location: location
     appPlanId: appPlanDeploy.outputs.planId
-    dockerImage: dockerImage
-    dockerImageTag: dockerImageTag
   }
-
 }
 output siteUrl string = deployWebsite.outputs.siteUrl
 
