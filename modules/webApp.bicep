@@ -1,12 +1,12 @@
-param location string = 'norwayeast'
+param location string = 'westus3'
 
-param namePrefix string = 'vicnilosx2'
+param namePrefix string = 'itosx2'
 param appPlanId string
 
 param dockerImage string = 'ubuntu/nginx'
 param dockerImageTag string = 'latest'
 
-resource webApplication 'Microsoft.Web/sites@2023-01-01' = {
+resource webApplication 'Microsoft.Web/sites@2022-03-01' = {
   name: '${namePrefix}-site'
   location: location
 
@@ -37,5 +37,4 @@ resource webApplication 'Microsoft.Web/sites@2023-01-01' = {
     }
   }
 }
-
 output siteUrl string = webApplication.properties.hostNames[0]
